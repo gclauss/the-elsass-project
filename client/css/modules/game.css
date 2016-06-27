@@ -75,14 +75,22 @@
 	width : 50%;
 }
 
+.game__result-container {
+	display : flex;
+	align-items: center;
+  	justify-content: center;
+	flex: 1;
+}
+
 .game__result {
 	flex: 1;
+	text-align : center;
 }
 
 
 .game__replay {
 	flex: 1;
 	border : none;
-	background-color : var(--game__correct__bg-color);
+	background-color : var(--game__replay__bg-color);
 	color : var(--game__correct__color);
 }

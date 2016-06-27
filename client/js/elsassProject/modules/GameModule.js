@@ -81,7 +81,8 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 
 	var replayButton = domHelper.createElement('button', 'replay');
 	var resultMessage = domHelper.createElement('div', 'result');
-	var modal = domHelper.createElement('div', 'modal', [resultMessage, replayButton]);
+	var resultContainer = domHelper.createElement('div', 'result-container', [resultMessage]);
+	var modal = domHelper.createElement('div', 'modal', [resultContainer, replayButton]);
 	var modalBackground = domHelper.createElement('div', 'modal-background', [modal]);
 
 	var container = domHelper.createElement('div', 'container', [punchLineContainer, nameContainer, buttonsContainer]);
@@ -103,15 +104,6 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 		domHelper.removeModifier(modal, 'hidden');
 	}
 
-	_bindClick(correctButton, 'correct');
-	_bindClick(wrongButton, 'wrong');
-	_bindClick(replayButton, 'replay');
-
-	replayButton.addEventListener('click', _hideModal);
-	_hideModal();
-
-
-
 	function setRandomText(array, node) {
 		var randomFloat = Math.random();
 		var randomInt = Math.floor(array.length*randomFloat);
@@ -123,11 +115,25 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 		}
 	}
 
-	//TODO i18n/clean : 
-	setRandomText(punchLineTexts, punchLine);
-	setRandomText(correctTexts, correctButton);
-	setRandomText(wrongTexts, wrongButton);
-	replayButton.textContent = 'Rejouer'; //TODO random
+	function _setupView() {
+		_hideModal();
+		//TODO i18n/clean : 
+		setRandomText(punchLineTexts, punchLine);
+		setRandomText(correctTexts, correctButton);
+		setRandomText(wrongTexts, wrongButton);
+		replayButton.textContent = 'Rejouer'; //TODO random
+	}
+
+	_bindClick(correctButton, 'correct');
+	_bindClick(wrongButton, 'wrong');
+	_bindClick(replayButton, 'replay');
+
+	replayButton.addEventListener('click', function() {
+		_setupView();
+	});
+	_setupView();
+
+
 
 	var self = {};
 
