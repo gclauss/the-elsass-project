@@ -15,6 +15,7 @@
 
 .game__punchline {
 	color : var(--game__punchline__color);
+	font-size : var(--game__normal__font-size);
 }
 
 .game__name-container {
@@ -42,6 +43,7 @@
 	background-color : var(--game__correct__bg-color);
 	color : var(--game__correct__color);
 	flex : 1;
+	font-size : var(--game__normal__font-size);
 }
 
 .game__wrong {
@@ -49,6 +51,7 @@
 	background-color : var(--game__wrong__bg-color);
 	color : var(--game__wrong__color);
 	flex : 1;
+	font-size : var(--game__normal__font-size);
 }
 
 .game__modal-background {
@@ -85,6 +88,7 @@
 .game__result {
 	flex: 1;
 	text-align : center;
+	font-size : var(--game__normal__font-size);
 }
 
 
@@ -93,4 +97,5 @@
 	border : none;
 	background-color : var(--game__replay__bg-color);
 	color : var(--game__correct__color);
+	font-size : var(--game__normal__font-size);
 }

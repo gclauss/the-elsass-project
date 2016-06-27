@@ -12,10 +12,12 @@
 	--game__punchline-container__flex: 1;
 
 	--game__name__color: white;
-	--game__name__font-size: 300%;
+	--game__name__font-size: 800%;
 	--game__name-container__flex: 2;
 
 	--game__replay__bg-color: blueviolet;
+
+	--game__normal__font-size: 400%;
 }
 
 body {
