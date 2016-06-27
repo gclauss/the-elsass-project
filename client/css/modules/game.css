@@ -72,10 +72,16 @@
 	display : flex;
 	background-color : white;
 	flex-direction : column;
-	flex : 1;
-	margin : 12% 25%;
 	height : 50%;
 	width : 50%;
+	top: 25%;
+	position: fixed;
+	left: 25%;
+	transition : top 250ms;
+}
+
+.game__modal--hidden {
+	top : 125%;
 }
 
 .game__result-container {
