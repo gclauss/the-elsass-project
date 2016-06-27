@@ -1,0 +1,52 @@
+.game__container {
+	width : 100%;
+	height : 100%;
+	display : flex;
+	background-color : var(--game__container__bg-color);
+	flex-direction : column;
+}
+
+.game__punchline-container {
+	flex : var(--game__punchline-container__flex);
+	display : flex;
+	align-items: center;
+  	justify-content: center;
+}
+
+.game__punchline {
+	color : var(--game__punchline__color);
+}
+
+.game__name-container {
+	flex : var(--game__name-container__flex);
+	display : flex;
+	align-items: center;
+  	justify-content: center;
+}
+
+.game__name {
+	color : var(--game__name__color);
+	font-weight : bold;
+	font-style : italic;
+	font-size : var(--game__name__font-size);
+}
+
+.game__buttons-container {
+	display : flex;
+	flex-direction : row;
+	flex : var(--game__buttons-container__flex);
+}
+
+.game__correct {
+	border : none;
+	background-color : var(--game__correct__bg-color);
+	color : var(--game__correct__color);
+	flex : 1;
+}
+
+.game__wrong {
+	border : none;
+	background-color : var(--game__wrong__bg-color);
+	color : var(--game__wrong__color);
+	flex : 1;
+}
