@@ -2,8 +2,8 @@ elsassProject.modules.GameModule = function(container) {
 
 	var punchLineTexts = [
 		"J'parie que tu sais pas si c'est un nom de village tiens : ",
-		"Aller devine cui-là oldie kuh",
-		"Ca tu n'y arrivera pas, gotfedami",
+		"Aller devine çui-là altie kuh",
+		"Ca tu n'y arrivera pas, got verdammi",
 	];
 
 	var correctTexts = [
@@ -15,7 +15,10 @@ elsassProject.modules.GameModule = function(container) {
 		"Naturlich",
 		"Genau",
 		"Worum net",
-		"Jaja"
+		"Jaja",
+		"Sech gut",
+		"Hopla geis",
+		"Korrect"
 	];
 
 	var wrongTexts = [
@@ -24,14 +27,25 @@ elsassProject.modules.GameModule = function(container) {
 		"Bien sur que non",
 		"Non mais qui a inventé ça ?",
 		"Sech nix",
+		"Nene",
 		"Jo neeeh",
 		"Jo komm",
-		"Te fous pas de moi"
+		"Te fous pas de moi",
+		"Me prends pas pour deux con hein"
 	];
 
-	var correctResulsTexts = ['Gagné'];
+	var correctResulsTexts = [
+		"Prima t'as Gagné"
+	];
 
-	var failedResulsTexts = ['Perdu'];
+	var failedResulsTexts = [
+		"Sech eps, encore perdu",
+		"Fait pas ta beleidigdi lèwerwùrscht (saucisse de foie vexée)"
+	];
+
+	var replayTexts = [
+		"Noch e mol"
+	]
 
 	var view = elsassProject.modules.GameView({
 		domHelper : elsassProject.utilities.DOMHelper({block : 'game'}),
@@ -40,7 +54,8 @@ elsassProject.modules.GameModule = function(container) {
 		correctTexts : correctTexts,
 		wrongTexts : wrongTexts,
 		correctResulsTexts : correctResulsTexts,
-		failedResulsTexts : failedResulsTexts
+		failedResulsTexts : failedResulsTexts,
+		replayTexts : replayTexts
 	});
 
 	var model = elsassProject.modules.GameModel({
@@ -73,6 +88,7 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 	var punchLineTexts = dependencyInjection.punchLineTexts;
 	var correctTexts = dependencyInjection.correctTexts;
 	var wrongTexts = dependencyInjection.wrongTexts;
+	var replayTexts = dependencyInjection.replayTexts;
 
 	var correctResulsTexts = dependencyInjection.correctResulsTexts;
 	var failedResulsTexts = dependencyInjection.failedResulsTexts;
@@ -125,11 +141,10 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 
 	function _setupView() {
 		_hideModal();
-		//TODO i18n/clean : 
 		setRandomText(punchLineTexts, punchLine);
 		setRandomText(correctTexts, correctButton);
 		setRandomText(wrongTexts, wrongButton);
-		replayButton.textContent = 'Rejouer'; //TODO random
+		setRandomText(replayTexts, replayButton);
 	}
 
 	_bindClick(correctButton, 'correct');
