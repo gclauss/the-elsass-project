@@ -1,51 +1,13 @@
-elsassProject.modules.GameModule = function(container) {
+elsassProject.modules.GameModule = function(parameters) {
 
-	var punchLineTexts = [
-		"J'parie que tu sais pas si c'est un nom de village tiens : ",
-		"Aller devine çui-là altie kuh",
-		"Ca tu n'y arrivera pas, got verdammi",
-	];
-
-	var correctTexts = [
-		"Hopla c'est bon",
-		"Ouep",
-		"Tout à fait",
-		"Bien sur",
-		"Taccord",
-		"Naturlich",
-		"Genau",
-		"Worum net",
-		"Jaja",
-		"Sech gut",
-		"Hopla geis",
-		"Korrect"
-	];
-
-	var wrongTexts = [
-		"N'importe quoi!",
-		"Et puis quoi encore!",
-		"Bien sur que non",
-		"Non mais qui a inventé ça ?",
-		"Sech nix",
-		"Nene",
-		"Jo neeeh",
-		"Jo komm",
-		"Te fous pas de moi",
-		"Me prends pas pour deux con hein"
-	];
-
-	var correctResulsTexts = [
-		"Prima t'as Gagné"
-	];
-
-	var failedResulsTexts = [
-		"Sech eps, encore perdu",
-		"Fait pas ta beleidigdi lèwerwùrscht (saucisse de foie vexée)"
-	];
-
-	var replayTexts = [
-		"Noch e mol"
-	]
+	var container = parameters.container;
+	var punchLineTexts = parameters.punchLineTexts;
+	var correctTexts = parameters.correctTexts;
+	var wrongTexts = parameters.wrongTexts;
+	var correctResulsTexts = parameters.correctResulsTexts;
+	var failedResulsTexts = parameters.failedResulsTexts
+	var replayTexts = parameters.replayTexts;
+	var villages = parameters.villages;
 
 	var view = elsassProject.modules.GameView({
 		domHelper : elsassProject.utilities.DOMHelper({block : 'game'}),
@@ -59,8 +21,8 @@ elsassProject.modules.GameModule = function(container) {
 	});
 
 	var model = elsassProject.modules.GameModel({
-		serverUrl : 'url',
-		eventHelper : elsassProject.utilities.EventHelper()
+		eventHelper : elsassProject.utilities.EventHelper(),
+		villages : villages
 	});
 
 	var controller = elsassProject.modules.GameController({
@@ -187,11 +149,7 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 elsassProject.modules.GameModel = function(dependencyInjection) {
 
 	var eventHelper = dependencyInjection.eventHelper;
-
-	var villages = [
-		{name : "Truchtersheim", exists : true},
-		{name : "Schluchendorf", exists : false, author : 'Geoffroy'}
-	];
+	var villages = dependencyInjection.villages;
 
 	function getRandom(array) {
 		var randomFloat = Math.random();
