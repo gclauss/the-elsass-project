@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/gclauss/the-elsass-project#readme",
   "dependencies": {
-    "connect": "^3.4.1",
-    "serve-static": "^1.10.2"
+    "connect": "3.4.1",
+    "serve-static": "1.10.2"
   }
 }
