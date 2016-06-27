@@ -7,10 +7,15 @@ elsassProject.modules.GameModule = function(container) {
 	];
 
 	var correctTexts = [
-		"Hoke c'est bon",
+		"Hopla c'est bon",
 		"Ouep",
 		"Tout à fait",
-		"Bien sur"
+		"Bien sur",
+		"Taccord",
+		"Naturlich",
+		"Genau",
+		"Worum net",
+		"Jaja"
 	];
 
 	var wrongTexts = [
@@ -18,7 +23,10 @@ elsassProject.modules.GameModule = function(container) {
 		"Et puis quoi encore!",
 		"Bien sur que non",
 		"Non mais qui a inventé ça ?",
-		"Sech nix"
+		"Sech nix",
+		"Jo neeeh",
+		"Jo komm",
+		"Te fous pas de moi"
 	];
 
 	var correctResulsTexts = ['Gagné'];

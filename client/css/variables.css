@@ -1,10 +1,10 @@
 :root {
-	--game__container__bg-color: purple;
+	--game__container__bg-color: rgb(167,179,188);
 
-	--game__correct__bg-color: green;
+	--game__correct__bg-color: rgb(45,149,67);
 	--game__correct__color: white;
 
-	--game__wrong__bg-color: red;
+	--game__wrong__bg-color: rgb(192,63,45);
 	--game__wrong__color: white;
 	--game__buttons-container__flex: 1;
 
@@ -15,7 +15,7 @@
 	--game__name__font-size: 800%;
 	--game__name-container__flex: 2;
 
-	--game__replay__bg-color: blueviolet;
+	--game__replay__bg-color: rgb(77,68,132);
 
 	--game__normal__font-size: 400%;
 }
