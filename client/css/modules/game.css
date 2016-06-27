@@ -50,3 +50,39 @@
 	color : var(--game__wrong__color);
 	flex : 1;
 }
+
+.game__modal-background {
+	position : fixed;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	transition : top 250ms;
+	background : rgba(160,160,160,0.6);
+}
+
+.game__modal-background--hidden {
+	top : 100%;
+}
+
+.game__modal {
+	display : flex;
+	background-color : white;
+	flex-direction : column;
+	flex : 1;
+	margin : 12% 25%;
+	height : 50%;
+	width : 50%;
+}
+
+.game__result {
+	flex: 1;
+}
+
+
+.game__replay {
+	flex: 1;
+	border : none;
+	background-color : var(--game__correct__bg-color);
+	color : var(--game__correct__color);
+}
