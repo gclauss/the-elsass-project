@@ -1,7 +1,6 @@
 var port = process.env.PORT || 5000;
 
 var restify = require('restify');
-var ecstatic = require('ecstatic');
 
 function respond(req, res, next) {
   res.send('hello ' + req.params.name);
