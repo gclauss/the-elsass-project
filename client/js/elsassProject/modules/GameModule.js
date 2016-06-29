@@ -171,8 +171,8 @@ elsassProject.modules.GameModel = function(dependencyInjection) {
 			return response.json()
 			.then(function(jsonData) {
 				console.log('here2', jsonData);
-				console.log('here3', jsonData.name);
-				eventHelper.fireEvent('new-village', jsonData);
+				console.log('here3', JSON.parse(jsonData).name);
+				eventHelper.fireEvent('new-village', JSON.parse(jsonData));
 			});
 		});
 	};
