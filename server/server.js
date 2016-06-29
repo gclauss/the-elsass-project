@@ -19,8 +19,8 @@ var server = restify.createServer();
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
-server.get(/\/app\/?.*/, restify.serveStatic({
-  directory: '../client',
+server.get(/\/docs\/current\/?.*/, restify.serveStatic({
+  directory: './documentation/v1',
   default: 'index.html'
 }));
 
