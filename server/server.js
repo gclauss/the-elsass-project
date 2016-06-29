@@ -12,7 +12,7 @@ var server = restify.createServer();
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
-server.use(ecstatic({ root: __dirname + '../client' }));
+server.use(ecstatic({ root: __dirname + '/' }));
 
 
 server.listen(port, function() {
