@@ -19,6 +19,11 @@ var server = restify.createServer();
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
+server.get(/\/app\/?.*/, restify.serveStatic({
+  directory: './client',
+  default: 'index.html'
+}));
+
 server.listen(port, function() {
   console.log('%s listening at %s', server.name, server.url);
 });
