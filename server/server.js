@@ -12,7 +12,7 @@ server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
 server.get(/\/docs\/public\/?.*/, restify.serveStatic({
-  directory: './public'
+    directory: __dirname
 }));
 
 
