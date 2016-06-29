@@ -11,8 +11,9 @@ var server = restify.createServer();
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
-server.get(/\/docs\/public\/?.*/, restify.serveStatic({
-    directory: __dirname
+server.get(/\/?.*/, restify.serveStatic({
+    directory: __dirname,
+    default : 'index.html'
 }));
 
 
