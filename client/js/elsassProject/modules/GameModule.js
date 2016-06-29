@@ -171,6 +171,7 @@ elsassProject.modules.GameModel = function(dependencyInjection) {
 		})
 		.then(function(jsonData) {
 			console.log('here2', jsonData);
+			console.log('here3', jsonData.name);
 			eventHelper.fireEvent('new-village', jsonData);
 		});
 	};
@@ -204,6 +205,8 @@ elsassProject.modules.GameController = function(dependencyInjection) {
 
 	self.registerEvents = function() {
 		model.addListener('new-village', function(eventData) {
+			console.log('here4', eventData);
+			console.log('here5', eventData.name);
 			currentElement = eventData;
 			view.setVillageName(eventData.name);
 		});
