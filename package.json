@@ -19,6 +19,6 @@
   "dependencies": {
     "connect": "3.4.1",
     "serve-static": "1.10.2",
-    "restify" : "4.1.1"
+    "restify" : "2.4.x"
   }
 }
