@@ -170,7 +170,7 @@ elsassProject.modules.GameModel = function(dependencyInjection) {
 			return response.json();
 		})
 		.then(function(jsonData) {
-			console.log('here2', response);
+			console.log('here2', jsonData);
 			eventHelper.fireEvent('new-village', jsonData);
 		});
 	};
