@@ -88,18 +88,18 @@
 	display : flex;
 	align-items: center;
   	justify-content: center;
-	flex: 1;
+	flex: 5;
 }
 
 .game__result {
-	flex: 3;
+	flex: 1;
 	text-align : center;
 	font-size : var(--game__normal__font-size);
 }
 
 
 .game__replay {
-	flex: 1;
+	flex: 2;
 	border : none;
 	background-color : var(--game__replay__bg-color);
 	color : var(--game__correct__color);
