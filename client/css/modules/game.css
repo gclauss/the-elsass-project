@@ -92,7 +92,7 @@
 }
 
 .game__result {
-	flex: 1;
+	flex: 3;
 	text-align : center;
 	font-size : var(--game__normal__font-size);
 }
