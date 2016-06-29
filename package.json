@@ -19,6 +19,7 @@
   "homepage": "https://github.com/gclauss/the-elsass-project#readme",
   "dependencies": {
     "restify" : "4.1.1",
-    "babel-polyfill" : "6.9.1"
+    "babel-polyfill" : "6.9.1",
+    "whatwg-fetch" : "1.0.0"
   }
 }
