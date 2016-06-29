@@ -50,20 +50,6 @@ elsassProject.Application = function(parameters) {
 		"Noch e mol"
 	];
 
-	var villages = [
-		{name : "Truchtersheim", exists : true},
-		{name : "Schluchendorf", exists : false, author : 'Geoffroy'},
-		{name : "Hoplagheim", exists : false, author : 'Martin'},
-		{name : "Bredelagheim", exists : false, author : 'Martin'},
-		{name : "Manalawihr", exists : false, author : 'Martin'},
-		{name : "Untersheim-le-haut", exists : false, author : 'Martin'},
-		{name : "Schloukheim", exists : false, author : 'Martin'},
-		{name : "Nachparisheim", exists : false, author : 'Martin'},
-		{name : "Haltelawihr", exists : false, author : 'Martin'},
-		{name : "Bierbuchberg", exists : false, author : 'Martin'},
-		{name : "Flammenwiller", exists : false, author : 'Martin'}
-	];
-
 	var self = {};
 
 	self.start = function() {
@@ -81,8 +67,7 @@ elsassProject.Application = function(parameters) {
 			wrongTexts : wrongTexts,
 			correctResulsTexts : correctResulsTexts,
 			failedResulsTexts : failedResulsTexts,
-			replayTexts : replayTexts,
-			villages : villages
+			replayTexts : replayTexts
 		});
 		gameModule.start();
 	};

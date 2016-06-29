@@ -7,7 +7,6 @@ elsassProject.modules.GameModule = function(parameters) {
 	var correctResulsTexts = parameters.correctResulsTexts;
 	var failedResulsTexts = parameters.failedResulsTexts
 	var replayTexts = parameters.replayTexts;
-	var villages = parameters.villages;
 
 	var view = elsassProject.modules.GameView({
 		domHelper : elsassProject.utilities.DOMHelper({block : 'game'}),
@@ -21,8 +20,7 @@ elsassProject.modules.GameModule = function(parameters) {
 	});
 
 	var model = elsassProject.modules.GameModel({
-		eventHelper : elsassProject.utilities.EventHelper(),
-		villages : villages
+		eventHelper : elsassProject.utilities.EventHelper()
 	});
 
 	var controller = elsassProject.modules.GameController({
@@ -149,29 +147,14 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 elsassProject.modules.GameModel = function(dependencyInjection) {
 
 	var eventHelper = dependencyInjection.eventHelper;
-	var villages = dependencyInjection.villages;
-
-	function getRandom(array) {
-		var randomFloat = Math.random();
-		var randomInt = Math.floor(array.length*randomFloat);
-		try {
-			return array[randomInt];
-		} catch(e) {
-			console.log('math error');
-			return array[0];			
-		}
-	}
 
 	var self = {};
 
 	self.getNewVillage = function() {
 		fetch('/random-village')
 		.then(function(response) {
-			console.log('here', response);
 			return response.json()
 			.then(function(jsonData) {
-				console.log('here2', jsonData);
-				console.log('here3', JSON.parse(jsonData).name);
 				eventHelper.fireEvent('new-village', JSON.parse(jsonData));
 			});
 		});
@@ -206,8 +189,6 @@ elsassProject.modules.GameController = function(dependencyInjection) {
 
 	self.registerEvents = function() {
 		model.addListener('new-village', function(eventData) {
-			console.log('here4', eventData);
-			console.log('here5', eventData.name);
 			currentElement = eventData;
 			view.setVillageName(eventData.name);
 		});
