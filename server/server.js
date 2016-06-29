@@ -1,28 +1,3 @@
-var port = process.env.PORT || 5000;
-
-var restify = require('restify');
-
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
-  next();
-}
-
-var server = restify.createServer();
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
-
-
-function getRandom(array) {
-	var randomFloat = Math.random();
-	var randomInt = Math.floor(array.length*randomFloat);
-	try {
-		return array[randomInt];
-	} catch(e) {
-		console.log('math error');
-		return array[0];			
-	}
-}
-
 var villages = [
 	{name : "Truchtersheim", exists : true},
 	{name : "Schluchendorf", exists : false, author : 'Geoffroy'},
@@ -37,8 +12,34 @@ var villages = [
 	{name : "Flammenwiller", exists : false, author : 'Martin'}
 ];
 
-server.get('/random-village', function() {
+var port = process.env.PORT || 5000;
+var restify = require('restify');
+
+function respond(req, res, next) {
+  res.send('hello ' + req.params.name);
+  next();
+}
+
+var server = restify.createServer();
+server.get('/hello/:name', respond);
+server.head('/hello/:name', respond);
+
+function getRandom(array) {
+	var randomFloat = Math.random();
+	var randomInt = Math.floor(array.length*randomFloat);
+	try {
+		return array[randomInt];
+	} catch(e) {
+		console.log('math error');
+		return array[0];			
+	}
+}
+
+
+
+server.get('/random-village', function(req, res, next) {
 	res.send(JSON.stringify(getRandom(villages)));
+	next();
 });
 
 server.get(/\/?.*/, restify.serveStatic({

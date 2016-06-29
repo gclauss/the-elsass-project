@@ -4,6 +4,7 @@
   "description": "The elsass project",
   "main": "server/server.js",
   "scripts": {
+    "postinstall" "./postinstall.sh"
     "start": "node server/server.js"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/gclauss/the-elsass-project#readme",
   "dependencies": {
-    "restify" : "4.1.1"
+    "restify" : "4.1.1",
+    "babel-polyfill" : "6.9.1"
   }
 }
