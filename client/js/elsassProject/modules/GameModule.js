@@ -165,8 +165,12 @@ elsassProject.modules.GameModel = function(dependencyInjection) {
 	var self = {};
 
 	self.getNewVillage = function() {
-		fetch('/random-village').then(function(response) {return response.json();})
+		fetch('/random-village').then(function(response) {
+			console.log('here', response);
+			return response.json();
+		})
 		.then(function(jsonData) {
+			console.log('here2', response);
 			eventHelper.fireEvent('new-village', jsonData);
 		});
 	};
