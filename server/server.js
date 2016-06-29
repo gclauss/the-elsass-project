@@ -12,7 +12,7 @@ server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
 server.get(/\/?.*/, restify.serveStatic({
-    directory: __dirname,
+    directory: __dirname + '/../client',
     default : 'index.html'
 }));
 
