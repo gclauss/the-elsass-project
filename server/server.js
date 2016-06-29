@@ -20,7 +20,7 @@ server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
 server.get(/\/app\/?.*/, restify.serveStatic({
-  directory: './client',
+  directory: '../client',
   default: 'index.html'
 }));
 
