@@ -167,7 +167,7 @@ elsassProject.modules.GameModel = function(dependencyInjection) {
 	self.getNewVillage = function() {
 		fetch('/random-village').then(function(response) {
 			console.log('here', response);
-			return response.json();
+			return JSON.parse(response.json());
 		})
 		.then(function(jsonData) {
 			console.log('here2', jsonData);
