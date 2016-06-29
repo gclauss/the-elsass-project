@@ -12,7 +12,9 @@ var server = restify.createServer();
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
-server.use(ecstatic({ root: __dirname + '/' }));
+server.get(/\/docs\/public\/?.*/, restify.serveStatic({
+  directory: './public'
+}));
 
 
 server.listen(port, function() {
