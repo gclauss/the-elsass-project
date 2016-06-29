@@ -129,11 +129,15 @@ elsassProject.modules.GameView = function(dependencyInjection) {
 	};
 
 	self.showResult = function(isCorrect, author) {
+		domHelper.removeModifier(resultMessage, 'success');
+		domHelper.removeModifier(resultMessage, 'failed');
 		if(isCorrect) {
 			setRandomText(correctResulsTexts, resultMessage);
+			domHelper.addModifier(resultMessage, 'success');
 		} else {
 			//TODO : use author.
 			setRandomText(failedResulsTexts, resultMessage);
+			domHelper.addModifier(resultMessage, 'failed');
 		}
 		_showModal();
 	}

@@ -18,6 +18,10 @@
 	--game__replay__bg-color: rgb(77,68,132);
 
 	--game__normal__font-size: 400%;
+
+	--game__result--success__color: rgb(167,179,188);
+	--game__result--failed__color: rgb(192,63,45);
+
 }
 
 body {

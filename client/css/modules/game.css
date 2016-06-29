@@ -97,6 +97,13 @@
 	font-size : var(--game__normal__font-size);
 }
 
+.game__result--success {
+	color : var(--game__result--success__color);
+}
+
+.game__result--failed {
+	color : var(--game__result--failed__color);
+}
 
 .game__replay {
 	flex: 2;
