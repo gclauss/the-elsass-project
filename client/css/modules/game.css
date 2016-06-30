@@ -28,7 +28,6 @@
 .game__name {
 	color : var(--game__name__color);
 	font-weight : bold;
-	font-style : italic;
 	font-size : var(--game__name__font-size);
 }
 
