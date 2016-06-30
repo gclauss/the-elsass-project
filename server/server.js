@@ -95,7 +95,7 @@ function getVillage() {
 	if(random > PROBABILITY_OF_GETTING_A_FAKE_VILLAGE) {
 		return getRandom(alsaceVillages)
 	} else {
-		return generateVillage();
+		return { name : generateVillage(), exists : false};
 		//return getRandom(fakeVillages);
 	}
 }
