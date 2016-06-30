@@ -66,7 +66,7 @@ function capitalizeFirstLetter(string) {
 }
 
 function generateVillage() {
-	var name = getRandomUsingFrequency(prefixs) + getRandom(corpus) + getRandomUsingFrequency(suffixs);
+	var name = getRandomUsingFrequency(prefixs).value + getRandom(corpus) + getRandomUsingFrequency(suffixs).value;
 	var capitalizedName = capitalizeFirstLetter(name);
 	if(isARealVillage(capitalizedName)) {
 		return generateVillage();
