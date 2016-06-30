@@ -27,3 +27,12 @@
 body {
 	margin : 0;
 }
+
+@font-face {
+    font-family: "Alpha Sausage";
+    src: url('../fonts/Alpha_Sausage.ttf');
+}
+
+* {
+	font-family: "Alpha Sausage"
+}
