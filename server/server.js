@@ -74,20 +74,6 @@ function generateVillage() {
 	return capitalizedName;
 }
 
-var fakeVillages = [
-	{name : "Schluchendorf", exists : false, author : 'Geoffroy'},
-	{name : "Hoplagheim", exists : false, author : 'Martin'},
-	{name : "Bredelagheim", exists : false, author : 'Martin'},
-	{name : "Manalawihr", exists : false, author : 'Martin'},
-	{name : "Untersheim-le-haut", exists : false, author : 'Martin'},
-	{name : "Schloukheim", exists : false, author : 'Martin'},
-	{name : "Nachparisheim", exists : false, author : 'Martin'},
-	{name : "Haltelawihr", exists : false, author : 'Martin'},
-	{name : "Bierbuchberg", exists : false, author : 'Martin'},
-	{name : "Flammenwiller", exists : false, author : 'Martin'}
-];
-
-
 var PROBABILITY_OF_GETTING_A_FAKE_VILLAGE = 0.479;
 
 function getVillage() {
@@ -96,7 +82,6 @@ function getVillage() {
 		return getRandom(alsaceVillages)
 	} else {
 		return { name : generateVillage(), exists : false};
-		//return getRandom(fakeVillages);
 	}
 }
 
