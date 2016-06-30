@@ -20,6 +20,60 @@ var alsaceVillages = alsaceRawVillages.map(function(name) {
 });
 
 
+function isARealVillage(name) {
+	return alsaceRawVillages.indexOf(name) > -1;
+}
+
+var prefixs = [
+	{ value : '', frequency : 0.6},
+	{ value : 'nieder', frequency : 0.2},
+	{ value : 'ober', frequency : 0.2}
+];
+
+var suffixs = [
+	{ value : 'heim', frequency : 0.5},
+	{ value : 'dorf', frequency : 0.2},
+	{ value : 'willer', frequency : 0.2},
+	{ value : 'wihr', frequency : 0.1}
+];
+
+var corpus = [
+	"schluchen",
+	"hopla",
+	"bredela",
+	"manala",
+	"schlouk",
+	"nachparis",
+	"haltela",
+	"bierbuch",
+	"flammen"
+];
+
+function getRandomUsingFrequency(array) {
+	var randomFloat = Math.random();
+	var sum = 0;
+	for(var i=0; i<array.length; i++){
+		sum += array[i].frequency;
+		if(randomFloat < sum) {
+			return array[i];
+		}
+	}
+	return array[array.length -1];
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function generateVillage() {
+	var name = getRandomUsingFrequency(prefixs) + getRandom(corpus) + getRandomUsingFrequency(suffixs);
+	var capitalizedName = capitalizeFirstLetter(name);
+	if(isARealVillage(capitalizedName)) {
+		return generateVillage();
+	}
+	return capitalizedName;
+}
+
 var fakeVillages = [
 	{name : "Schluchendorf", exists : false, author : 'Geoffroy'},
 	{name : "Hoplagheim", exists : false, author : 'Martin'},
@@ -41,7 +95,8 @@ function getVillage() {
 	if(random > PROBABILITY_OF_GETTING_A_FAKE_VILLAGE) {
 		return getRandom(alsaceVillages)
 	} else {
-		return getRandom(fakeVillages);
+		return generateVillage();
+		//return getRandom(fakeVillages);
 	}
 }
 
