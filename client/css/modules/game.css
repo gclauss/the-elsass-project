@@ -29,6 +29,7 @@
 	color : var(--game__name__color);
 	font-weight : bold;
 	font-size : var(--game__name__font-size);
+	font-family: 'Titillium Web', sans-serif;
 }
 
 .game__buttons-container {
