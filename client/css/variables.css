@@ -33,6 +33,11 @@ body {
     src: url('../fonts/Alpha_Sausage.ttf');
 }
 
+@font-face {
+    font-family: "Ancient Medium";
+    src: url('../fonts/Ancient_Medium.ttf');
+}
+
 * {
-	font-family: "Alpha Sausage"
+	font-family: "Ancient Medium"
 }
